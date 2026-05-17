@@ -1,7 +1,7 @@
 package com.spring.ai.demo04.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.options.ChatOptions;
+import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

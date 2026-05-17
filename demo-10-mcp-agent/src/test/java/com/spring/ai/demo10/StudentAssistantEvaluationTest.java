@@ -2,11 +2,11 @@ package com.spring.ai.demo10;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.chat.evaluation.RelevancyEvaluator;
+import org.springframework.ai.document.Document;
 import org.springframework.ai.evaluation.EvaluationRequest;
 import org.springframework.ai.evaluation.EvaluationResponse;
-import org.springframework.ai.evaluation.RelevancyEvaluator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -30,7 +30,7 @@ class StudentAssistantEvaluationTest {
         // 构建评估请求
         EvaluationRequest request = new EvaluationRequest(
                 userQuestion,
-                List.of(new SystemMessage(context)),
+                List.of(new Document(context)),
                 aiResponse
         );
 

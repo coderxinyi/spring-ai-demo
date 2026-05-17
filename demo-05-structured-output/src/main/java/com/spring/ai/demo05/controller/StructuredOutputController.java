@@ -1,7 +1,7 @@
 package com.spring.ai.demo05.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
-import org.springframework.ai.chat.options.ChatOptions;
+import org.springframework.ai.chat.prompt.ChatOptions;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -116,7 +116,7 @@ class StructuredOutputController {
     @GetMapping("/topics")
     List<String> topics(@RequestParam(defaultValue = "光合作用") String keyword) {
         return chatClient.prompt()
-                .user(u -> u.text("列出与"{keyword}"相关的5个核心知识点，每点一句话概括。")
+                .user(u -> u.text("列出与\"{keyword}\"相关的5个核心知识点，每点一句话概括。")
                         .param("keyword", keyword))
                 .options(ChatOptions.builder()
                         .temperature(0.3)
