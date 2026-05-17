@@ -1,0 +1,18 @@
+spring:
+  ai:
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        options:
+          model: deepseek-v4-flash
+          temperature: 0.7
+    # 本地 ONNX Embedding 模型配置
+    # 默认使用 all-MiniLM-L6-v2，首次运行自动下载模型文件
+    embedding:
+      transformer:
+        tokenizer:
+          options:
+            padding: true
+
+server:
+  port: 9008

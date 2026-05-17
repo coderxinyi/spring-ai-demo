@@ -1,0 +1,38 @@
+spring:
+  ai:
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        options:
+          model: deepseek-v4-flash
+    mcp:
+      server:
+        # 使用 Streamable HTTP 协议
+        protocol: STREAMABLE
+        type: SYNC
+        annotation-scanner:
+          enabled: true
+      client:
+        enabled: true
+        type: SYNC
+        request-timeout: 30s
+        toolcallback:
+          enabled: true
+        streamable-http:
+          connections:
+            student-tools:
+              url: http://localhost:9090
+              endpoint: /mcp
+
+server:
+  port: 9090
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  observations:
+    export:
+      prometheus:
+        enabled: true

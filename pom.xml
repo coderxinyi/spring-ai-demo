@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.0</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>com.spring.ai.xiaogu</groupId>
+  <artifactId>spring-ai-demo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>spring-ai-demo</name>
+  <description>Spring AI 知乎系列文章配套代码</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>17</java.version>
+    <spring-ai.version>1.1.6</spring-ai.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.ai</groupId>
+        <artifactId>spring-ai-bom</artifactId>
+        <version>${spring-ai.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>demo-01-quick-start</module>
+    <module>demo-02-design-philosophy</module>
+    <module>demo-03-chatclient</module>
+    <module>demo-04-prompt-patterns</module>
+    <module>demo-05-structured-output</module>
+    <module>demo-06-advisors-memory</module>
+    <module>demo-07-etl-pipeline</module>
+    <module>demo-08-vector-rag</module>
+    <module>demo-09-tool-calling</module>
+    <module>demo-10-mcp-agent</module>
+  </modules>
+
+</project>
